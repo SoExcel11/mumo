@@ -686,8 +686,8 @@ section {
 
 .section-tag {
   display: inline-block;
-  background: rgba(246, 157, 57, .12);
-  color: var(--orange);
+  background: #264b5e;
+  color: white;
   font-size: .75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1402,9 +1402,9 @@ h3 {
 
   border-radius: 999px;
 
-  background: rgba(246, 157, 57, .12);
+  background: #264b5e;
 
-  color: #F69D39;
+  color: white;
 
   font-size: .8rem;
   font-weight: 700;
@@ -1419,9 +1419,9 @@ h3 {
 
   border-radius: 999px;
 
-  background: rgba(246, 157, 57, .12);
+  background: #264b5e;
 
-  color: #F69D39;
+  color: white;
 
   font-size: .8rem;
   font-weight: 700;
@@ -3239,10 +3239,13 @@ footer,
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
-  background: hsla(198, 100%, 50%, 0.149);
-  color: #5cc8ff;
+  background: #264b5e;
+  color: white;
   font-size: 12px;
   margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .faq-header h2 {
@@ -4277,8 +4280,8 @@ a.cta-btn {
   gap: 8px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(246, 157, 57, .12);
-  color: var(--orange);
+  background: #264b5e;
+  color: white;
   font-size: .78rem;
   font-weight: 600;
   margin-bottom: 18px;
