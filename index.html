@@ -717,6 +717,8 @@
       </div>
     </section>
 
+
+    <!-- HOME STEPS SECTION -->
     <section class="home-steps">
       <div class="section-inner">
 
@@ -809,6 +811,7 @@
 
 
 
+    <!-- CTA SECTION ------------------------>
 
     <section class="cta-p2-split">
       <div class="cta-p2-inner">
@@ -844,7 +847,7 @@
 
 
 
-
+  <!-- PRICING PAGE ------------------------>
 
   <div class="page" id="page-pricing">
 
@@ -960,7 +963,9 @@
             <div class="pf-icon yes">✓</div>Custom roles &amp; permissions
           </div>
         </div>
-        <button class="plan-btn" onclick="nav('demo')">Book a Demo</button>
+        <button type="button" onclick="window.open('https://app.mumopos.com/demo', '_blank')" class="cta-btn">
+          Book a Demo
+        </button>
       </div>
     </div>
 
@@ -1031,6 +1036,7 @@
       </div>
     </section>
 
+    <!-- CTA SECTION------------------------>
     <section class="cta-p2-split" style="background: var(--cream);">
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
@@ -3465,8 +3471,8 @@
       if (wrap) wrap.classList.toggle('annual', isAnnual);
       if (monthly) monthly.classList.toggle('active', !isAnnual);
       if (annual) annual.classList.toggle('active', isAnnual);
-      if (proPrice) proPrice.textContent = isAnnual ? 'UGX 39k' : 'UGX 49k';
-      if (bizPrice) bizPrice.textContent = isAnnual ? 'UGX 79k' : 'UGX 99k';
+      if (proPrice) proPrice.textContent = isAnnual ? 'UGX 80k' : 'UGX 100k';
+      if (bizPrice) bizPrice.textContent = isAnnual ? 'Talk to Sales' : 'Talk to Sales';
     }
 
     // LIVE COUNTER animation
