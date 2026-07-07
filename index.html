@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,14 +24,14 @@
       if (mobileNav) mobileNav.classList.remove('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (typeof window.initReveal === 'function') setTimeout(window.initReveal, 80);
-      
+
       if (!skipHistory) {
         var path = page === 'home' ? '/' : '/' + page;
         window.history.pushState({ page: page }, "", path);
       }
     };
 
-    window.addEventListener('popstate', function(event) {
+    window.addEventListener('popstate', function (event) {
       if (event.state && event.state.page) {
         nav(event.state.page, true);
       } else {
@@ -39,7 +39,7 @@
       }
     });
 
-    window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('DOMContentLoaded', function () {
       var path = window.location.pathname.replace(/^\/|\/$/g, '');
       if (path && document.getElementById('page-' + path)) {
         nav(path, true);
@@ -333,7 +333,7 @@
           <div class="tour-tabs">
             <button class="tour-tab active" onclick="switchTour('pos',this)">POS &amp; Sales</button>
             <button class="tour-tab" onclick="switchTour('reports',this)">Reports</button>
-            <button class="tour-tab" onclick="switchTour('inventory',this)">Services</button>
+            <button class="tour-tab" onclick="switchTour('inventory',this)">Inventory</button>
           </div>
         </div>
 
