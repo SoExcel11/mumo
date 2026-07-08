@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>mumopos POS</title>
+  <title>mumo POS</title>
   <link rel="icon" type="image/png" href="images/mumo2-POS-Y.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="style.css?v=3" rel="stylesheet" />
   <script>
-    window.nav = function (page, skipHistory) {
+    window.nav = function (page) {
       var target = document.getElementById('page-' + page);
       if (!target) return;
       var pages = document.querySelectorAll('.page');
@@ -24,29 +24,7 @@
       if (mobileNav) mobileNav.classList.remove('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (typeof window.initReveal === 'function') setTimeout(window.initReveal, 80);
-
-      if (!skipHistory) {
-        var path = page === 'home' ? '/' : '/' + page;
-        window.history.pushState({ page: page }, "", path);
-      }
     };
-
-    window.addEventListener('popstate', function (event) {
-      if (event.state && event.state.page) {
-        nav(event.state.page, true);
-      } else {
-        nav('home', true);
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', function () {
-      var path = window.location.pathname.replace(/^\/|\/$/g, '');
-      if (path && document.getElementById('page-' + path)) {
-        nav(path, true);
-      } else {
-        window.history.replaceState({ page: 'home' }, "", "/");
-      }
-    });
 
     window.syncFooters = function () {
       var homeFooter = document.querySelector('#page-home > footer');
@@ -164,7 +142,7 @@
 
   <!-- STICKY CTA BAR -->
   <div class="sticky-cta" id="stickyCta">
-    <span>⚡ <strong>500+ businesses</strong> run on mumopos — free to start</span>
+    <span>⚡ <strong>500+ businesses</strong> run on mumo — free to start</span>
     <button class="sticky-cta-btn" onclick="window.open('https://app.mumopos.com/onboarding')">Start Free →</button>
     <button class="sticky-cta-close" onclick="document.getElementById('stickyCta').style.display='none'">✕</button>
   </div>
@@ -215,18 +193,18 @@
           </div>
           <div class="live-counter">
             <span class="lc-pulse"></span>
-            <span class="lc-num" id="liveCount">547</span> businesses using mumopos right now
+            <span class="lc-num" id="liveCount">547</span> businesses using mumo right now
           </div>
         </div>
         <div class="hero-mockup">
           <div class="css-device-tablet">
             <div class="css-device-screen">
-              <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos POS Dashboard">
+              <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo POS Dashboard">
             </div>
           </div>
           <div class="css-device-phone">
             <div class="css-device-screen">
-              <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos POS Mobile View">
+              <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo POS Mobile View">
             </div>
           </div>
         </div>
@@ -259,7 +237,7 @@
       <div class="section-inner">
         <div class="reveal"><span class="section-tag">Features</span>
           <h2>Run your whole business <span class="accent">from one place</span></h2>
-          <p class="sub">From the morning shift to end-of-day reports - mumopos handles the busywork.</p>
+          <p class="sub">From the morning shift to end-of-day reports - mumo handles the busywork.</p>
         </div>
 
         <div class="feat-proto p1-asymmetric" style="position: relative;">
@@ -328,7 +306,7 @@
       <div class="section-inner tour-inner">
         <div class="tour-header reveal">
           <span class="section-tag white">Interactive tour</span>
-          <h2 style="color:#fff">See mumopos <span class="accent">in action</span></h2>
+          <h2 style="color:#fff">See mumo <span class="accent">in action</span></h2>
           <p>Explore the actual screens your team will use every day.</p>
           <div class="tour-tabs">
             <button class="tour-tab active" onclick="switchTour('pos',this)">POS &amp; Sales</button>
@@ -490,7 +468,7 @@
       <div class="section-inner" style="text-align: center;">
         <span class="section-tag">Any Device</span>
         <h2>Works on the devices <span class="accent">you already own</span></h2>
-        <p class="sub" style="margin: 0 auto 40px; max-width: 600px;">No need for expensive POS hardware. mumopos works
+        <p class="sub" style="margin: 0 auto 40px; max-width: 600px;">No need for expensive POS hardware. mumo works
           perfectly on your smartphone, tablet, or laptop.</p>
         <div class="hardware-grid">
           <div class="hw-card"><img src="images/hw-smartphone.png" alt="Smartphone" class="hw-img">
@@ -519,7 +497,7 @@
               Mode</span>
             <h2 style="color: #ffffff;">No internet? <span class="accent" style="color: #F69D39;">No problem.</span>
             </h2>
-            <p>Mumopos continues to process cash sales and manage your shift even when the Wi-Fi drops. It automatically
+            <p>Mumo continues to process cash sales and manage your shift even when the Wi-Fi drops. It automatically
               syncs everything the moment you're back online.</p>
           </div>
           <div class="offline-visual">
@@ -555,7 +533,7 @@
         <div class="marquee-track track-left">
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -582,7 +560,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -602,7 +580,7 @@
           <!-- DUPLICATE FOR INFINITE SCROLL -->
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -629,7 +607,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -688,7 +666,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -737,7 +715,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -858,7 +836,7 @@
         </div>
         <div class="cta-visual">
           <div class="floating-app">
-            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos Dashboard">
+            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo Dashboard">
           </div>
         </div>
       </div>
@@ -905,7 +883,6 @@
       </div>
     </div>
     <div class="pricing-grid">
-
       <div class="plan-card pro reveal d2">
         <div class="popular-badge">Most Popular</div>
         <div class="plan-name" style="color:#fff">Pro</div>
@@ -937,8 +914,7 @@
             <div class="pf-icon no">✕</div><span style="color:rgba(255,255,255,.3)">Multi-branch</span>
           </div>
         </div>
-        <button class="plan-btn" onclick="window.open('https://app.mumopos.com/onboarding')">Start 7 Days Free
-          Trial</button>
+        <button class="plan-btn" onclick="window.open('https://app.mumopos.com/onboarding')">Start 7 Days Trial</button>
       </div>
       <div class="plan-card business reveal d3">
         <div class="plan-name">Business</div>
@@ -969,8 +945,8 @@
             <div class="pf-icon yes">✓</div>Custom roles &amp; permissions
           </div>
         </div>
-        <button type="button" onclick="window.open('https://app.mumopos.com/onboarding')" class="plan-btn">
-          Start 7 Days Free Trial
+        <button type="button" onclick="window.open('https://app.mumopos.com/demo', '_blank')" class="cta-btn">
+          Start 7 Days Trial
         </button>
       </div>
     </div>
@@ -1023,7 +999,7 @@
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
             We accept MTN MoMo, Airtel Money, Visa, and Mastercard. Monthly billing is automatic. Annual billing gives
-            you a 50% discount.</div>
+            you a 20% discount.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -1047,16 +1023,17 @@
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
           <h2>Ready to transform your business?</h2>
-          <p>Join 500+ businesses across East Africa who trust Mumopos to manage sales, staff, and inventory.</p>
+          <p>Join 500+ businesses across East Africa who trust Mumo to manage sales, staff, and inventory.</p>
           <div class="cta-actions">
-            <button class="cta-btn-primary" onclick="nav('demo')">Start Free Trial</button>
+            <button class="cta-btn-primary" onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
+              Trial</button>
             <button class="cta-btn-outline-primary" onclick="window.open('https://app.mumopos.com/demo', '_blank')">Book
               a Demo</button>
           </div>
         </div>
         <div class="cta-visual reveal">
           <div class="floating-app">
-            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos Dashboard">
+            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo Dashboard">
           </div>
         </div>
       </div>
@@ -1076,17 +1053,18 @@
           <span class="section-tag" style="background:rgba(255,77,26,0.1);color:#ff4d1a;border:none;">Simple
             Process</span>
           <h1>Up and running in <span class="accent">4 steps</span></h1>
-          <p>No technical skills needed. If you can use a smartphone, you can use Mumopos POS. Get your entire business
+          <p>No technical skills needed. If you can use a smartphone, you can use Mumo POS. Get your entire business
             online in under 10 minutes.</p>
           <div class="hhm-actions">
-            <button class="cta-btn-primary" onclick="nav('demo')">Start Free Trial</button>
+            <button class="cta-btn-primary" onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
+              Trial</button>
             <button class="cta-btn-outline-primary" onclick="nav('pricing')"
               style="color:#ffffff; border-color:rgba(255,255,255,0.3);">View Pricing</button>
           </div>
         </div>
         <div class="hhm-visual reveal d2">
           <div class="hhm-glass-card">
-            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos Dashboard"
+            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo Dashboard"
               class="hhm-main-img">
             <div class="hhm-floating-badge badge-1">
               <div class="hhm-badge-icon">⚡</div>
@@ -1116,8 +1094,7 @@
             <div class="content reveal d1">
               <h2 style="font-size:36px;font-weight:700;margin-bottom:12px;color:var(--dark);">Choose your business type
               </h2>
-              <p style="font-size:17px;line-height:1.6;color:var(--text-light);">Salon, retail, pharmacy, cafe...
-                mumopos
+              <p style="font-size:17px;line-height:1.6;color:var(--text-light);">Salon, retail, pharmacy, cafe... mumo
                 is pre-configured for your industry.</p>
               <div
                 style="margin-top:20px;padding:8px 16px;background:rgba(255,77,26,0.1);color:#ff4d1a;border-radius:20px;font-size:14px;font-weight:600;display:inline-block">
@@ -1195,7 +1172,7 @@
           style="background:rgba(255,255,255,0.1); color:#fff; border: 1px solid rgba(255,255,255,0.2);">FAQs</span>
         <h2 style="color:#fff;">Common <span class="accent">questions</span></h2>
         <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:16px auto 0;">Everything you need to know about
-          switching to Mumopos.</p>
+          switching to Mumo.</p>
       </div>
       <div class="how-faqs reveal d1"
         style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
@@ -1204,13 +1181,12 @@
           style="background:#fff; padding:24px 32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
           <summary
             style="font-weight:600; font-size:1.1rem; color:var(--dark); outline:none; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            Do I need internet to use mumopos?
+            Do I need internet to use mumo?
             <span style="color:var(--blue); font-size:1.4rem;">+</span>
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            mumopos works best with internet for real-time syncing. Basic sales can still be recorded offline and will
-            sync
+            mumo works best with internet for real-time syncing. Basic sales can still be recorded offline and will sync
             when connectivity is restored.</div>
         </details>
 
@@ -1218,12 +1194,12 @@
           style="background:#fff; padding:24px 32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
           <summary
             style="font-weight:600; font-size:1.1rem; color:var(--dark); outline:none; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            What devices does mumopos run on?
+            What devices does mumo run on?
             <span style="color:var(--blue); font-size:1.4rem;">+</span>
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            mumopos runs in any modern browser &mdash; Chrome, Firefox, Safari. Works on smartphones, tablets, and
+            mumo runs in any modern browser &mdash; Chrome, Firefox, Safari. Works on smartphones, tablets, and
             computers. No special hardware required.</div>
         </details>
 
@@ -1261,16 +1237,17 @@
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
           <h2>Ready to transform your business?</h2>
-          <p>Join 500+ businesses across East Africa who trust Mumopos to manage sales, staff, and inventory.</p>
+          <p>Join 500+ businesses across East Africa who trust Mumo to manage sales, staff, and inventory.</p>
           <div class="cta-actions">
-            <button class="cta-btn-primary" onclick="nav('demo')">Start Free Today</button>
+            <button class="cta-btn-primary" onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
+              Today</button>
             <button class="cta-btn-outline-primary" onclick="window.open('https://app.mumopos.com/demo', '_blank')">Book
               a Demo</button>
           </div>
         </div>
         <div class="cta-visual reveal">
           <div class="floating-app">
-            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumopos Dashboard">
+            <img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png" alt="Mumo Dashboard">
           </div>
         </div>
       </div>
@@ -1311,15 +1288,14 @@
           </h1>
           <p
             style="color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.6; max-width: 480px; margin-bottom: 40px; text-shadow: 0 1px 4px rgba(0,0,0,0.2);">
-            Whether you're a solo stylist or managing a team of twelve, mumopos keeps your commissions, cash, and
-            customers
+            Whether you're a solo stylist or managing a team of twelve, mumo keeps your commissions, cash, and customers
             on one screen.
           </p>
 
           <div class="hero-btns" style="margin-bottom: 40px;">
             <a href="#" onclick="nav('demo');return false;" class="btn-primary"
               style="background: #fff; color: var(--blue);">Set up your Business</a>
-            <button onclick="nav('demo')" class="btn-hero-outline"
+            <button onclick="window.open('https://app.mumopos.com/demo', '_blank')" class="btn-hero-outline"
               style="color: #fff; border-color: rgba(255,255,255,0.4);">See a demo</button>
           </div>
 
@@ -1328,7 +1304,7 @@
               <div class="sp-num"
                 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff;">200+</div>
               <div class="sp-lbl" style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500;">Salons on
-                mumopos</div>
+                mumo</div>
             </div>
             <div class="sp-item">
               <div class="sp-num"
@@ -1399,7 +1375,7 @@
     <section class="salon-why">
       <div class="section-inner">
         <div class="reveal">
-          <span class="section-tag">Why salon owners love Mumopos</span>
+          <span class="section-tag">Why salon owners love Mumo</span>
           <h2>Everything a salon needs, <span class="accent">nothing it doesn't</span></h2>
         </div>
 
@@ -1418,7 +1394,7 @@
           <div class="salon-why-inner">
             <div class="salon-why-text">
               <h3>Fast Checkout for Any Client</h3>
-              <p>Whether it's a walk-in or a pre-booked appointment, mumopos lets you ring up any service in seconds.
+              <p>Whether it's a walk-in or a pre-booked appointment, mumo lets you ring up any service in seconds.
                 Accept cash, mobile money (MTN MoMo, Airtel Money, M-Pesa), or card payments all in one place.</p>
               <div class="salon-why-features">
                 <div class="swf-item">
@@ -1607,7 +1583,7 @@
             <div class="salon-why-text">
               <h3>Track Retail Products Too</h3>
               <p>Manage your salon's retail products (shampoos, serums, oils, etc.) with automatic stock tracking. Get
-                low-stock alerts and manage suppliers directly from mumopos.</p>
+                low-stock alerts and manage suppliers directly from mumo.</p>
               <div class="salon-why-features">
                 <div class="swf-item">
 
@@ -1649,14 +1625,14 @@
     <section style="background: var(--cream); padding: 80px 0; overflow-x: hidden;">
       <div class="section-inner" style="text-align: center; margin-bottom: 50px;">
         <div class="reveal"><span class="section-tag blue">Real stories</span>
-          <h2>Salon owners <span class="accent-b">love Mumopos</span></h2>
+          <h2>Salon owners <span class="accent-b">love Mumo</span></h2>
         </div>
       </div>
       <div class="marquee-wrap">
         <div class="marquee-track track-left">
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -1683,7 +1659,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -1703,7 +1679,7 @@
           <!-- DUPLICATE FOR INFINITE SCROLL -->
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -1730,7 +1706,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -1789,7 +1765,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -1838,7 +1814,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -1858,7 +1834,7 @@
           style="background:rgba(255,255,255,0.1); color:#fff; border: 1px solid rgba(255,255,255,0.2);">FAQs</span>
         <h2 style="color:#fff;">Common <span class="accent">questions</span></h2>
         <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:16px auto 0;">Everything you need to know about
-          switching to Mumopos.</p>
+          switching to Mumo.</p>
       </div>
       <div class="how-faqs reveal d1"
         style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
@@ -1867,12 +1843,12 @@
           style="background:#fff; padding:24px 32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
           <summary
             style="font-weight:600; font-size:1.1rem; color:var(--dark); outline:none; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            Do I need internet to use mumopos?
+            Do I need internet to use mumo?
             <span style="color:var(--blue); font-size:1.4rem;">+</span>
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            mumopos works best with internet for real-time syncing across devices. Basic sales can still be recorded
+            mumo works best with internet for real-time syncing across devices. Basic sales can still be recorded
             offline and will sync automatically when connectivity is restored.</div>
         </details>
 
@@ -1886,7 +1862,7 @@
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
             Yes! You can assign different commission structures (percentage or flat fee) to every stylist. When a
-            checkout is completed, Mumopos splits the revenue automatically.</div>
+            checkout is completed, Mumo splits the revenue automatically.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -1898,7 +1874,7 @@
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            Absolutely. Mumopos lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
+            Absolutely. Mumo lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -1921,15 +1897,16 @@
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
           <h2>Ready to transform your salon?</h2>
-          <p>Join 200+ salon owners across East Africa who trust Mumopos to manage appointments, staff, inventory, and
+          <p>Join 200+ salon owners across East Africa who trust Mumo to manage appointments, staff, inventory, and
             sales.</p>
-          <div class="cta-actions"><button class="cta-btn-primary" onclick="nav('demo')">Start Free
+          <div class="cta-actions"><button class="cta-btn-primary"
+              onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
               Today</button><button class="cta-btn-outline-primary"
               onclick="window.open('https://app.mumopos.com/demo', '_blank')">Book a Demo</button></div>
         </div>
         <div class="cta-visual reveal">
           <div class="floating-app"><img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png"
-              alt="Mumopos Dashboard"></div>
+              alt="Mumo Dashboard"></div>
         </div>
       </div>
     </section>
@@ -1965,14 +1942,14 @@
           </h1>
           <p
             style="color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.6; max-width: 480px; margin-bottom: 40px; text-shadow: 0 1px 4px rgba(0,0,0,0.2);">
-            From managing table reservations to sending tickets instantly to the kitchen and splitting bills, mumopos
+            From managing table reservations to sending tickets instantly to the kitchen and splitting bills, mumo
             ensures your restaurant runs as smoothly as your best recipe.
           </p>
 
           <div class="hero-btns" style="margin-bottom: 40px;">
             <a href="#" onclick="nav('demo');return false;" class="btn-primary"
               style="background: #fff; color: var(--blue);">Set up your restaurant</a>
-            <button onclick="nav('demo')" class="btn-hero-outline"
+            <button onclick="window.open('https://app.mumopos.com/demo', '_blank')" class="btn-hero-outline"
               style="color: #fff; border-color: rgba(255,255,255,0.4);">See a demo</button>
           </div>
 
@@ -1981,7 +1958,7 @@
               <div class="sp-num"
                 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff;">300+</div>
               <div class="sp-lbl" style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500;">
-                Restaurants on mumopos</div>
+                Restaurants on mumo</div>
             </div>
             <div class="sp-item">
               <div class="sp-num"
@@ -2052,7 +2029,7 @@
     <section class="salon-why">
       <div class="section-inner">
         <div class="reveal">
-          <span class="section-tag">Why food & beverage teams love Mumopos</span>
+          <span class="section-tag">Why food & beverage teams love Mumo</span>
           <h2>Everything your kitchen needs, <span class="accent">nothing it doesn't</span></h2>
         </div>
 
@@ -2266,14 +2243,14 @@
     <section style="background: var(--cream); padding: 80px 0; overflow-x: hidden;">
       <div class="section-inner" style="text-align: center; margin-bottom: 50px;">
         <div class="reveal"><span class="section-tag blue">Real stories</span>
-          <h2>Salon owners <span class="accent-b">love Mumopos</span></h2>
+          <h2>Salon owners <span class="accent-b">love Mumo</span></h2>
         </div>
       </div>
       <div class="marquee-wrap">
         <div class="marquee-track track-left">
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -2300,7 +2277,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -2320,7 +2297,7 @@
           <!-- DUPLICATE FOR INFINITE SCROLL -->
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -2347,7 +2324,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -2406,7 +2383,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -2455,7 +2432,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -2475,7 +2452,7 @@
           style="background:rgba(255,255,255,0.1); color:#fff; border: 1px solid rgba(255,255,255,0.2);">FAQs</span>
         <h2 style="color:#fff;">Common <span class="accent">questions</span></h2>
         <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:16px auto 0;">Everything you need to know about
-          switching to Mumopos.</p>
+          switching to Mumo.</p>
       </div>
       <div class="how-faqs reveal d1"
         style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
@@ -2484,12 +2461,12 @@
           style="background:#fff; padding:24px 32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
           <summary
             style="font-weight:600; font-size:1.1rem; color:var(--dark); outline:none; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            Do I need internet to use mumopos?
+            Do I need internet to use mumo?
             <span style="color:var(--blue); font-size:1.4rem;">+</span>
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            mumopos works best with internet for real-time syncing across devices. Basic sales can still be recorded
+            mumo works best with internet for real-time syncing across devices. Basic sales can still be recorded
             offline and will sync automatically when connectivity is restored.</div>
         </details>
 
@@ -2503,7 +2480,7 @@
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
             Yes! You can assign different commission structures (percentage or flat fee) to every stylist. When a
-            checkout is completed, Mumopos splits the revenue automatically.</div>
+            checkout is completed, Mumo splits the revenue automatically.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -2515,7 +2492,7 @@
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            Absolutely. Mumopos lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
+            Absolutely. Mumo lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -2538,15 +2515,16 @@
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
           <h2>Ready to transform your salon?</h2>
-          <p>Join 200+ salon owners across East Africa who trust Mumopos to manage table reservations, staff, inventory,
+          <p>Join 200+ salon owners across East Africa who trust Mumo to manage table reservations, staff, inventory,
             and sales.</p>
-          <div class="cta-actions"><button class="cta-btn-primary" onclick="nav('demo')">Start Free
+          <div class="cta-actions"><button class="cta-btn-primary"
+              onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
               Today</button><button class="cta-btn-outline-primary"
               onclick="window.open('https://app.mumopos.com/demo', '_blank')">Book a Demo</button></div>
         </div>
         <div class="cta-visual reveal">
           <div class="floating-app"><img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png"
-              alt="Mumopos Dashboard"></div>
+              alt="Mumo Dashboard"></div>
         </div>
       </div>
     </section>
@@ -2583,15 +2561,14 @@
           </h1>
           <p
             style="color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.6; max-width: 480px; margin-bottom: 40px; text-shadow: 0 1px 4px rgba(0,0,0,0.2);">
-            From shelves to checkout, mumopos helps retailers manage inventory, payments, and customer loyalty
-            seamlessly
+            From shelves to checkout, mumo helps retailers manage inventory, payments, and customer loyalty seamlessly
             in one connected system.
           </p>
 
           <div class="hero-btns" style="margin-bottom: 40px;">
             <a href="#" onclick="nav('demo');return false;" class="btn-primary"
               style="background: #fff; color: var(--blue);">Set up your store</a>
-            <button onclick="nav('demo')" class="btn-hero-outline"
+            <button onclick="window.open('https://app.mumopos.com/demo', '_blank')" class="btn-hero-outline"
               style="color: #fff; border-color: rgba(255,255,255,0.4);">See a demo</button>
           </div>
 
@@ -2600,7 +2577,7 @@
               <div class="sp-num"
                 style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff;">250+</div>
               <div class="sp-lbl" style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500;">Stores on
-                mumopos</div>
+                mumo</div>
             </div>
             <div class="sp-item">
               <div class="sp-num"
@@ -2671,7 +2648,7 @@
     <section class="salon-why">
       <div class="section-inner">
         <div class="reveal">
-          <span class="section-tag">Why retailers love Mumopos</span>
+          <span class="section-tag">Why retailers love Mumo</span>
           <h2>Everything your store needs, <span class="accent">nothing it doesn't</span></h2>
         </div>
 
@@ -2884,14 +2861,14 @@
     <section style="background: var(--cream); padding: 80px 0; overflow-x: hidden;">
       <div class="section-inner" style="text-align: center; margin-bottom: 50px;">
         <div class="reveal"><span class="section-tag blue">Real stories</span>
-          <h2>Salon owners <span class="accent-b">love Mumopos</span></h2>
+          <h2>Salon owners <span class="accent-b">love Mumo</span></h2>
         </div>
       </div>
       <div class="marquee-wrap">
         <div class="marquee-track track-left">
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -2918,7 +2895,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -2938,7 +2915,7 @@
           <!-- DUPLICATE FOR INFINITE SCROLL -->
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Mumopos saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
+            <p>"Mumo saved my salon 10 hours a week on payroll. The commission tracking is a lifesaver."</p>
             <div class="test-author">
               <div class="test-avatar"><img src="images/confident-beauty-salon-owner1.webp" alt="Sarah N."
                   style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
@@ -2965,7 +2942,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Mumopos POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
+            <p>"The Mumo POS is so fast. My cashiers learned how to use it in less than 10 minutes."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/joyous-it-worker-satisfied-after-testing-code-seeing-good-results.webp" alt="Emmanuel K."
@@ -3024,7 +3001,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -3073,7 +3050,7 @@
           </div>
           <div class="marquee-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Switching to Mumopos was the best business decision I made this year. Highly recommended."</p>
+            <p>"Switching to Mumo was the best business decision I made this year. Highly recommended."</p>
             <div class="test-author">
               <div class="test-avatar"><img
                   src="images/black-people-working-together-their-taxes-management-their-home-office.webp"
@@ -3093,7 +3070,7 @@
           style="background:rgba(255,255,255,0.1); color:#fff; border: 1px solid rgba(255,255,255,0.2);">FAQs</span>
         <h2 style="color:#fff;">Common <span class="accent">questions</span></h2>
         <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:16px auto 0;">Everything you need to know about
-          switching to Mumopos.</p>
+          switching to Mumo.</p>
       </div>
       <div class="how-faqs reveal d1"
         style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
@@ -3102,12 +3079,12 @@
           style="background:#fff; padding:24px 32px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
           <summary
             style="font-weight:600; font-size:1.1rem; color:var(--dark); outline:none; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-            Do I need internet to use mumopos?
+            Do I need internet to use mumo?
             <span style="color:var(--blue); font-size:1.4rem;">+</span>
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            mumopos works best with internet for real-time syncing across devices. Basic sales can still be recorded
+            mumo works best with internet for real-time syncing across devices. Basic sales can still be recorded
             offline and will sync automatically when connectivity is restored.</div>
         </details>
 
@@ -3121,7 +3098,7 @@
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
             Yes! You can assign different commission structures (percentage or flat fee) to every stylist. When a
-            checkout is completed, Mumopos splits the revenue automatically.</div>
+            checkout is completed, Mumo splits the revenue automatically.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -3133,7 +3110,7 @@
           </summary>
           <div
             style="color:#555; line-height:1.6; font-size:0.95rem; padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.05);">
-            Absolutely. Mumopos lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
+            Absolutely. Mumo lets you log payments from MTN MoMo, Airtel Money, cash, and credit cards.</div>
         </details>
 
         <details class="premium-faq-item"
@@ -3156,15 +3133,16 @@
       <div class="cta-p2-inner">
         <div class="cta-content reveal">
           <h2>Ready to transform your salon?</h2>
-          <p>Join 200+ salon owners across East Africa who trust Mumopos to manage inventory tracking, staff, inventory,
+          <p>Join 200+ salon owners across East Africa who trust Mumo to manage inventory tracking, staff, inventory,
             and sales.</p>
-          <div class="cta-actions"><button class="cta-btn-primary" onclick="nav('demo')">Start Free
+          <div class="cta-actions"><button class="cta-btn-primary"
+              onclick="window.open('https://app.mumopos.com/demo', '_blank')">Start Free
               Today</button><button class="cta-btn-outline-primary"
               onclick="window.open('https://app.mumopos.com/demo', '_blank')">Book a Demo</button></div>
         </div>
         <div class="cta-visual reveal">
           <div class="floating-app"><img src="images/FireShot Capture 010 - mumo POS - [app.mumopos.com].png"
-              alt="Mumopos Dashboard"></div>
+              alt="Mumo Dashboard"></div>
         </div>
       </div>
     </section>
@@ -3178,7 +3156,7 @@
       <div class="dhm-content reveal">
         <span class="section-tag">Free, no commitment</span>
         <h1>Book a <span class="accent">live demo</span></h1>
-        <p>A mumopos expert will walk you through the product and answer all your questions. Takes 30 minutes.</p>
+        <p>A mumo expert will walk you through the product and answer all your questions. Takes 30 minutes.</p>
       </div>
     </div>
 
@@ -3223,7 +3201,7 @@
         <div class="demo-success" id="demo-success">
           <div class="success-icon">🎉</div>
           <h3>Request received!</h3>
-          <p>A mumopos team member will contact you on WhatsApp within <strong>24 hours</strong> to confirm your demo
+          <p>A mumo team member will contact you on WhatsApp within <strong>24 hours</strong> to confirm your demo
             time.<br /><br />In the meantime, you can <a href="https://app.mumopos.com/onboarding"
               style="color:var(--orange);font-weight:700">start for free</a> — no card required.</p>
         </div>
@@ -3268,7 +3246,7 @@
         <!-- Brand -->
         <div class="footer-brand">
 
-          <img loading="lazy" src="images/mumo2-POS-Y.png" alt="Mumopos POS" class="footer-logo">
+          <img loading="lazy" src="images/mumo2-POS-Y.png" alt="Mumo POS" class="footer-logo">
 
           <p>
             The complete POS platform for salons, spas,
@@ -3304,14 +3282,14 @@
 
           <div>
             <h4>Solutions</h4>
-            <a href="#" onclick="nav('salons');return false;">Salons & Spas</a>
-            <a href="#" onclick="nav('food');return false;">Food & Beverages</a>
-            <a href="#" onclick="nav('retail');return false;">Retail Shops</a>
+            <a href="#" onclick="nav('salons');return false;">Health & Beauty</a>
+            <a href="#" onclick="nav('retail');return false;">Retail</a>
+            <a href="#" onclick="nav('food');return false;">Restaurants</a>
           </div>
 
           <div>
             <h4>Company</h4>
-            <a href="https://app.mumopos.com/demo" target="_blank">Book a Demo</a>
+            <a href="#" onclick="window.open('https://app.mumopos.com/demo', '_blank');return false;">Book a Demo</a>
             <a href="https://app.mumopos.com/login">Sign In</a>
           </div>
 
@@ -3332,7 +3310,7 @@
       <div class="footer-bottom">
 
         <span>
-          © 2026 Mumopos POS. Built for East Africa.
+          © 2026 Mumo POS. Built for East Africa.
         </span>
 
 
@@ -3342,7 +3320,7 @@
     </div>
 
     <div class="footer-watermark">
-      MUMOPOS
+      MUMO
     </div>
 
   </footer>
@@ -3486,7 +3464,7 @@
       if (wrap) wrap.classList.toggle('annual', isAnnual);
       if (monthly) monthly.classList.toggle('active', !isAnnual);
       if (annual) annual.classList.toggle('active', isAnnual);
-      if (proPrice) proPrice.textContent = isAnnual ? 'UGX 50k' : 'UGX 100k';
+      if (proPrice) proPrice.textContent = isAnnual ? 'UGX 80k' : 'UGX 100k';
       if (bizPrice) bizPrice.textContent = isAnnual ? 'Talk to sales' : 'Talk to sales';
     }
 
